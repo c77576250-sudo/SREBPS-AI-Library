@@ -1,79 +1,130 @@
-# 🧠 SREBPS AI SDK & Librerie Ufficiali
+# 🧠 SREBPS AI Official SDK & Libraries
 
-Benvenuto nel repository ufficiale delle librerie e degli SDK di **SREBPS AI**!
-Questo pacchetto consente agli sviluppatori di integrare l'ecosistema di SREBPS AI nei propri progetti: **bot Discord**, **bot Telegram**, **siti web**, **applicazioni desktop**, script di automazione e backend aziendali.
+[![PyPI version](https://img.shields.io/pypi/v/srebps-ai.svg?style=flat-square&color=3b82f6)](https://pypi.org/project/srebps-ai/)
+[![npm version](https://img.shields.io/npm/v/srebps-ai.svg?style=flat-square&color=6366f1)](https://www.npmjs.com/package/srebps-ai)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square)](https://opensource.org/licenses/MIT)
+[![Official Website](https://img.shields.io/badge/Website-srebps--ai.gt.tc-purple.svg?style=flat-square)](https://srebps-ai.gt.tc)
+[![Docs](https://img.shields.io/badge/Docs-Portal-emerald.svg?style=flat-square)](https://srebps-ai.gt.tc/srebps-ai-libreria/)
+
+Welcome to the official repository of **SREBPS AI** client SDKs and developer libraries.
+This repository enables developers to seamlessly integrate the multimodal intelligence of **SREBPS AI** into:
+- 🤖 **Discord Bots** (`discord.py` / `discord.js v14`)
+- 📱 **Telegram Bots**
+- 🌐 **Web Applications** (React, Vue, Next.js, Express, Fastify)
+- 🖥️ **Desktop & Automation Scripts**
+- 🎙️ **Voice Assistants & Interactive Web Widgets**
 
 ---
 
-## 📦 Struttura del Repository
+## 📦 Repository Structure
 
 ```
 srebps-ai-libreria/
-├── srebps-ai-python/       # SDK Ufficiale Python (Sync & Async, supporto bot Discord/Telegram)
-├── srebps-ai-javascript/   # SDK Ufficiale JavaScript / Node.js (Browser & Backend)
-├── srebps-ai-web/          # Widget Web pronto all'uso da incorporare in qualsiasi sito HTML
-└── README.md               # Guida generale e documentazione architettura
+├── srebps-ai-python/       # Official Python SDK (Sync, Async, Models, Discord/Telegram bots)
+├── srebps-ai-javascript/   # Official JavaScript & Node.js SDK (ESM, Browser & Node)
+├── srebps-ai-web/          # 1-Line Embeddable Web Widget for Websites
+└── spiegazioni-e-tutorial/ # Step-by-Step Developer Guides & Documentation Hub
 ```
 
 ---
 
-## 🌟 Funzionalità Principali
+## 🌟 Core Capabilities
 
-Tutte le librerie SREBPS AI offrono accesso unificato a:
+All SREBPS AI client SDKs provide unified access to:
 
-1. 💬 **Chat & Completions**: Modelli multimodali avanzati di SREBPS AI con supporto streaming, memoria conversazionale e system prompt personalizzati.
-2. 🎙️ **Text-to-Speech (TTS)**: Voci ultra-realistiche native di SREBPS AI:
-   - **Giuseppe** (`fahad`): Maschile, calda, naturale e colloquiale.
-   - **Fabio** (`sultan`): Maschile, autorevole, carismatica e professionale.
-   - **Isabella** (`noura`): Femminile, elegante, dolce e rassicurante.
-   - **Zoe** (`lulwa`): Femminile, brillante, vivace e solare.
-3. 👂 **Speech-to-Text (STT)**: Trascrizione vocale istantanea e ad altissima fedeltà in italiano e multilingua (Whisper ad alte prestazioni).
-4. 🎨 **Generazione Immagini**: Creazione immagini fotorealistiche e artistiche in tempo reale (FLUX.1-schnell / Imagen).
-5. 🔍 **Web Search Integrata**: Ricerca sul web in tempo reale integrata nei flussi di risposta.
-6. 🤖 **Helper per Bot**: Classi preconfigurate per Discord (`discord.py` / `discord.js`), Telegram e webhook.
+1. 💬 **Multimodal Chat & Reasoning**: Advanced LLM reasoning, multi-turn memory management, custom system instructions, and real-time streaming.
+2. 🎙️ **Neural Text-to-Speech (TTS)**: Ultra-realistic official voices:
+   - **Giuseppe** (`fahad`): Warm, natural, deep, and conversational masculine voice.
+   - **Fabio** (`sultan`): Authoritative, professional, charismatic masculine voice.
+   - **Isabella** (`noura`): Elegant, soothing, sweet, and calm feminine voice.
+   - **Zoe** (`lulwa`): Bright, energetic, dynamic, and youthful feminine voice.
+3. 👂 **Speech-to-Text (STT)**: High-precision speech transcription with automatic noise reduction and multiline buffering.
+4. 🎨 **Real-time Image Generation**: High-fidelity visual creation powered by FLUX.1 and Imagen models.
+5. 🔍 **Live Web Search**: Real-time web retrieval integration inside completion workflows.
+6. 🛡️ **Built-in Resilience**: Automatic retries, error handling, and safe fallback systems.
 
 ---
 
-## 🚀 Quick Start per Sviluppatori
+## 🚀 Quick Start
 
-### 🐍 Python
+### 🐍 Python (`pip install srebps-ai`)
+
 ```bash
-cd srebps-ai-libreria/srebps-ai-python
-pip install -e .
+pip install srebps-ai
 ```
+
 ```python
 from srebps_ai import SrebpsAI
 
 client = SrebpsAI()
-response = client.chat("Ciao SREBPS! Spiegami in breve cosa puoi fare.")
-print(response)
+
+# 1. Quick Chat
+response = client.chat("Hello SREBPS! Explain quantum computing in 3 sentences.")
+print(response.text)
+
+# 2. Neural Voice (TTS)
+audio = client.text_to_speech("Welcome to SREBPS AI!", voice="isabella")
+audio.save("welcome.mp3")
+
+# 3. Image Generation
+image_url = client.generate_image("A futuristic cyber city illuminated by violet neon lights")
+print("Image URL:", image_url)
 ```
 
-### ⚡ JavaScript / Node.js
+---
+
+### ⚡ JavaScript & Node.js (`npm install srebps-ai`)
+
 ```bash
-cd srebps-ai-libreria/srebps-ai-javascript
-npm install
+npm install srebps-ai
 ```
+
 ```javascript
 import { SrebpsAI } from 'srebps-ai';
 
-const client = new SrebpsAI();
-const response = await client.chat("Ciao SREBPS! Dimmi una curiosità scientifica.");
+const ai = new SrebpsAI();
+
+// 1. Quick Chat
+const response = await ai.chat("Hello SREBPS! Give me 3 tips for writing clean code.");
 console.log(response);
+
+// 2. Neural Voice (TTS)
+const audio = await ai.textToSpeech("Hello world from SREBPS AI!", "fabio");
+// audio.audioBase64 contains the generated MP3 data
+
+// 3. FLUX Image Generation
+const imageUrl = await ai.generateImage("A robotic astronaut walking on Mars, photorealistic 8k");
+console.log("Image URL:", imageUrl);
 ```
 
-### 🌐 Widget Web per Siti
-Includi lo script nella tua pagina HTML per aggiungere l'assistente vocale/chat fluttuante in 1 riga:
+---
+
+### 🌐 Embeddable Web Widget (1-Line HTML Integration)
+
+Add the live assistant to any webpage with a single script tag:
+
 ```html
 <script src="https://srebps-ai.gt.tc/srebps-ai-libreria/srebps-ai-web/srebps-widget.js"></script>
 <script>
-  SrebpsWidget.init({ position: 'bottom-right', voice: 'isabella' });
+  SrebpsWidget.init({
+    position: 'bottom-right',
+    voice: 'isabella',
+    title: 'SREBPS Assistant'
+  });
 </script>
 ```
 
 ---
 
-## 📖 Documentazione Completa
-- Per Python: vedi [srebps-ai-python/README.md](file:///c:/Users/Shadow/Downloads/SREBPS%20AI/srebps-ai-libreria/srebps-ai-python/README.md)
-- Per JavaScript/Node.js: vedi [srebps-ai-javascript/README.md](file:///c:/Users/Shadow/Downloads/SREBPS%20AI/srebps-ai-libreria/srebps-ai-javascript/README.md)
-- Per Web Widget: vedi [srebps-ai-web/README.md](file:///c:/Users/Shadow/Downloads/SREBPS%20AI/srebps-ai-libreria/srebps-ai-web/README.md)
+## 📖 Official Documentation & Developer Portal
+
+- **Live Interactive Docs**: [https://srebps-ai.gt.tc/srebps-ai-libreria/](https://srebps-ai.gt.tc/srebps-ai-libreria/)
+- **PyPI Package**: [https://pypi.org/project/srebps-ai/](https://pypi.org/project/srebps-ai/)
+- **NPM Package**: [https://www.npmjs.com/package/srebps-ai](https://www.npmjs.com/package/srebps-ai)
+- **Web App**: [https://srebps-ai.gt.tc/ai/](https://srebps-ai.gt.tc/ai/)
+
+---
+
+## 📄 License
+
+MIT © [SREBPS Company](https://srebps-ai.gt.tc) — Founder & C.E.O of SREBPS AI

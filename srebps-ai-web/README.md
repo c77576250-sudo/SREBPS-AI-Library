@@ -1,21 +1,41 @@
-# 🌐 SREBPS AI — Web Widget
+# 🌐 SREBPS AI — Embeddable Web Widget
 
-Widget web autonomo e pronto all'uso per incorporare l'assistente SREBPS AI in qualsiasi sito web (WordPress, HTML statico, React, Vue, PHP, Shopify).
+Standalone, plug-and-play interactive chat & voice assistant widget to embed **SREBPS AI** into any website (WordPress, static HTML, React, Vue, PHP, Shopify, Webflow).
 
 ---
 
-## ⚡ Come Includerlo nel Tuo Sito
+## ⚡ How to Add It to Your Website
 
-Inserisci queste due righe prima della chiusura del tag `</body>`:
+Insert these lines before the closing `</body>` tag of your HTML:
 
 ```html
-<!-- Widget SREBPS AI -->
-<script src="/srebps-ai-libreria/srebps-ai-web/srebps-widget.js"></script>
+<!-- SREBPS AI Web Assistant Widget -->
+<script src="https://srebps-ai.gt.tc/srebps-ai-libreria/srebps-ai-web/srebps-widget.js"></script>
 <script>
   window.addEventListener('DOMContentLoaded', () => {
-    SrebpsWidget.init();
+    SrebpsWidget.init({
+      position: 'bottom-right',
+      voice: 'isabella',
+      title: 'SREBPS Assistant'
+    });
   });
 </script>
 ```
 
-Apparirà automaticamente un pulsante circolare al neon in basso a destra con finestra di chat fluttuante in stile glassmorphism!
+A glowing neon launcher icon will float seamlessly on your page with responsive glassmorphic chat and voice controls!
+
+---
+
+## ⚙️ Configuration Options
+
+| Option | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| `position` | `string` | `'bottom-right'` | Position on screen: `'bottom-right'`, `'bottom-left'` |
+| `voice` | `string` | `'isabella'` | Default TTS neural voice: `'isabella'`, `'giuseppe'`, `'fabio'`, `'zoe'` |
+| `title` | `string` | `'SREBPS Assistant'` | Assistant header title |
+| `theme` | `string` | `'dark'` | Visual theme: `'dark'`, `'midnight'`, `'light'` |
+
+---
+
+## 📄 License
+MIT © [SREBPS Company](https://srebps-ai.gt.tc) — Founder & C.E.O of SREBPS AI
