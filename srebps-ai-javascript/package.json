@@ -1,6 +1,6 @@
 {
   "name": "srebps-ai",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Official JavaScript and Node.js SDK for SREBPS AI — Multimodal Chat, Neural TTS, FLUX Image Gen & Discord Bot",
   "main": "src/index.js",
   "module": "src/index.js",
