@@ -64,11 +64,21 @@ Ci sono **due livelli** di distribuzione:
 
 ---
 
-## Livello 1: Distribuzione Diretta da GitHub (Immediata e Senza Registrazioni)
+## 🌟 Status Python: UFFICIALMENTE ATTIVA SU PYPI!
 
-Non hai bisogno di pubblicare per forza su store terzi per far funzionare la tua libreria. Chiunque può installarla direttamente dal tuo GitHub con un solo comando!
+La libreria Python **\`srebps-ai\`** è stata pubblicata ufficialmente ed è già installabile in tutto il mondo:
+\`\`\`bash
+pip install srebps-ai
+\`\`\`
+👉 **Pagina Ufficiale**: [pypi.org/project/srebps-ai/1.0.0/](https://pypi.org/project/srebps-ai/1.0.0/)
 
-### Per Python:
+---
+
+## 📦 Installazione Diretta da GitHub (Alternative):
+
+Puoi installare le librerie anche direttamente dal repository GitHub di **\`c77576250-sudo\`**:
+
+### Per Python (da GitHub):
 \`\`\`bash
 pip install git+https://github.com/c77576250-sudo/srebps-ai.git#subdirectory=srebps-ai-python
 \`\`\`
@@ -266,14 +276,19 @@ Libreria ufficiale Python per integrare **SREBPS AI** in bot Discord, bot Telegr
 
 ## 📥 Installazione
 
-### Modalità locale (nella cartella del progetto):
+### Ufficiale da PyPI (Consigliato):
 \`\`\`bash
-pip install -e .
+pip install srebps-ai
 \`\`\`
 
 ### Installazione diretta da GitHub:
 \`\`\`bash
 pip install git+https://github.com/c77576250-sudo/srebps-ai.git#subdirectory=srebps-ai-python
+\`\`\`
+
+### Modalità locale (da cartella sorgente):
+\`\`\`bash
+pip install -e .
 \`\`\`
 
 ---
