@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esempio Integrazione SREBPS AI Widget</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 40px;
+            font-family: system-ui, sans-serif;
+            background: #0f172a;
+            color: #f8fafc;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        h1 {
+            color: #818cf8;
+        }
+        .card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 24px;
+            border-radius: 16px;
+            margin-top: 24px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Mio Sito Web con SREBPS AI</h1>
+        <p>Questa pagina dimostra l'integrazione del widget fluttuante di SREBPS AI.</p>
+        <div class="card">
+            <h3>Assistente Always-On</h3>
+            <p>Guarda in basso a destra: clicca sul pulsante orbitale per aprire la chat con SREBPS AI.</p>
+        </div>
+    </div>
+
+    <!-- SREBPS AI Widget -->
+    <script src="../../srebps-ai-web/srebps-widget.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            SrebpsWidget.init();
+        });
+    </script>
+</body>
+</html>

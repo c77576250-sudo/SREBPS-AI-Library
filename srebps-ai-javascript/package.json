@@ -1,0 +1,33 @@
+{
+  "name": "srebps-ai",
+  "version": "1.0.0",
+  "description": "SDK Ufficiale JavaScript e Node.js per SREBPS AI",
+  "main": "src/index.js",
+  "module": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "test": "node examples/node_chat.js"
+  },
+  "keywords": [
+    "srebps",
+    "srebps-ai",
+    "ai",
+    "chatgpt",
+    "groq",
+    "discord-bot",
+    "tts",
+    "whisper"
+  ],
+  "author": "SREBPS <c77576250@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/c77576250-sudo/srebps-ai.git"
+  },
+  "homepage": "https://srebps-ai.gt.tc/srebps-ai-libreria/",
+  "bugs": {
+    "url": "https://github.com/c77576250-sudo/srebps-ai/issues"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}

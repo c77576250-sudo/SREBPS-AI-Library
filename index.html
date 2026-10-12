@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SREBPS AI — Documentazione & SDK Ufficiali</title>
+    <meta name="description" content="Documentazione ufficiale di SREBPS AI: SDK Python, JavaScript/Node.js, Web Widget e tutorial passo-passo per pubblicare su GitHub, PyPI e NPM.">
+    <link rel="icon" type="image/png" href="/ai/login-logo.png">
+
+    <!-- Fonts Google: Outfit & JetBrains Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Marked.js per rendering Markdown & DOMPurify per sicurezza -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dompurify@3.0.8/dist/purify.min.js"></script>
+
+    <!-- Highlight.js per Syntax Highlighting moderno -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/python.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/javascript.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/bash.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/json.min.js"></script>
+
+    <!-- Stylesheet portale documentazione -->
+    <link rel="stylesheet" href="docs.css">
+</head>
+<body>
+
+    <!-- Header superiore -->
+    <header class="docs-header">
+        <div class="header-left">
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Apri menu">
+                <i class="fas fa-bars"></i>
+            </button>
+            <a href="/" class="brand-link">
+                <img src="/ai/login-logo.png" alt="SREBPS AI" class="brand-logo">
+                <span class="brand-title">SREBPS AI <span class="badge-sdk">LIBRARIES</span></span>
+            </a>
+        </div>
+
+        <div class="header-search">
+            <i class="fas fa-search search-icon"></i>
+            <input type="text" id="docSearch" placeholder="Cerca tra guide, API, tutorial (es: Discord, PyPI, TTS)..." autocomplete="off">
+            <span class="search-shortcut">CTRL K</span>
+        </div>
+
+        <div class="header-right">
+            <a href="/ai/" class="header-nav-link"><i class="fas fa-robot"></i> <span>Web App AI</span></a>
+            <a href="/ai/assistant/" class="header-nav-link"><i class="fas fa-microphone"></i> <span>Assistente</span></a>
+            <a href="https://github.com" target="_blank" class="github-btn" rel="noopener">
+                <i class="fab fa-github"></i>
+                <span>GitHub</span>
+            </a>
+        </div>
+    </header>
+
+    <!-- Layout Principale a Due Colonne: Sidebar ad Albero + Contenitore Documento -->
+    <div class="docs-layout">
+
+        <!-- Sidebar Sinistra con Cartelle e Sotto-sezioni -->
+        <aside class="docs-sidebar" id="docsSidebar">
+            <div class="sidebar-inner">
+                <div class="sidebar-intro">
+                    <span class="sidebar-tagline">Centro Sviluppatori & Guide</span>
+                </div>
+
+                <nav class="tree-nav" id="treeNav">
+                    <!-- Il menu ad albero viene generato dinamicamente da docs.js -->
+                </nav>
+            </div>
+        </aside>
+
+        <!-- Overlay mobile per chiudere sidebar -->
+        <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+        <!-- Area Contenuto Documento Centrale -->
+        <main class="docs-content" id="docsContentArea">
+            <div class="content-container">
+                <!-- Breadcrumbs -->
+                <nav class="docs-breadcrumbs" id="docsBreadcrumbs">
+                    <span>Documentazione</span> <i class="fas fa-chevron-right"></i> <span id="breadcrumbCurrent">Panoramica</span>
+                </nav>
+
+                <!-- Document Header -->
+                <div class="doc-header-box">
+                    <div class="doc-step-badge" id="docStepBadge">Passo 1 di 5</div>
+                    <h1 class="doc-title" id="docTitle">Caricamento in corso...</h1>
+                    <p class="doc-description" id="docDescription">Guida e documentazione ufficiale SREBPS AI.</p>
+                </div>
+
+                <!-- Markdown Content Rendered -->
+                <article class="markdown-body" id="markdownRendered">
+                    <!-- Contenuto Markdown renderizzato -->
+                </article>
+
+                <!-- Footer del documento con pulsanti Precedente / Successivo -->
+                <div class="doc-nav-footer">
+                    <button class="nav-doc-btn prev" id="prevDocBtn">
+                        <i class="fas fa-arrow-left"></i>
+                        <div>
+                            <span class="nav-dir">Precedente</span>
+                            <span class="nav-name" id="prevDocName">—</span>
+                        </div>
+                    </button>
+                    <button class="nav-doc-btn next" id="nextDocBtn">
+                        <div>
+                            <span class="nav-dir">Successivo</span>
+                            <span class="nav-name" id="nextDocName">—</span>
+                        </div>
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+        </main>
+
+    </div>
+
+    <!-- Script del portale documentazione -->
+    <script src="docs.js"></script>
+
+    <!-- Widget SREBPS AI incorporato in anteprima reale -->
+    <script src="srebps-ai-web/srebps-widget.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            if (window.SrebpsWidget) {
+                window.SrebpsWidget.init();
+            }
+        });
+    </script>
+</body>
+</html>
